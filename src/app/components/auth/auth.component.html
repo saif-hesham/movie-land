@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row justify-content-center mt-4">
+    <div class="col-lg-6 shadow p-3 rounded">
+      <form #f="ngForm" (ngSubmit)="onSubmit()">
+        <div class="for-group mb-3">
+          <label class="form-label" for="email">Enter your Email</label>
+          <input
+            name="email"
+            type="email"
+            id="email"
+            class="form-control"
+            ngModel
+            required
+            email
+            #email="ngModel"
+            [ngClass]="{
+              'is-valid': email.valid,
+              'is-invalid': !email.valid && email.touched
+            }"
+          />
+          <div *ngIf="email.invalid && email.touched" class="invalid-feedback">
+            Please enter a valid email address
+          </div>
+        </div>
+        <div class="for-group mb-4">
+          <label class="form-label" for="password">Enter your password</label>
+          <input
+            name="password"
+            type="password"
+            id="password"
+            class="form-control"
+            #password="ngModel"
+            ngModel
+            required
+            minlength="6"
+            [ngClass]="{ 'is-invalid': password.invalid && password.touched }"
+          />
+          <div
+            *ngIf="password.invalid && password.touched"
+            class="invalid-feedback"
+          >
+            Please enter a password with a minimum length of 6.
+          </div>
+          <div *ngIf="loginError" class="invalid-creds mt-2">
+            Invalid credentials.
+          </div>
+        </div>
+        <div class="d-flex">
+          <button
+            class="btn btn-dark my-2 col-md-6 col-12 ms-auto"
+            type="submit"
+            [disabled]="f.invalid"
+          >
+            submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

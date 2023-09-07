@@ -1,0 +1,30 @@
+<div
+  class="col rounded overflow-hidden container d-flex flex-column mt-3 bg-light shadow square"
+>
+  <img [src]="movie.imgUrl" alt="Movie Image" class="mt-1 rounded-top" />
+  <div class="mt-3">
+    <h5>{{ movie.original_title }}</h5>
+    <p>
+      {{ movie.overview }}
+      <a class="link-opacity-100-hover link-dark" (click)="onNavigate()"
+        >More</a
+      >
+    </p>
+  </div>
+  <hr class="mt-n4" />
+  <div>
+    <div>
+      <span>Release Date: </span>
+      <span>{{ movie.release_date }}</span>
+    </div>
+    <div>
+      <span>Rating: </span>
+      <span
+        >{{ movie.vote_average }} /10 ( {{ movie.vote_count }} rating )</span
+      >
+    </div>
+  </div>
+  <a [routerLink]="['/movies', movie.id]" class="btn btn-dark my-4"
+    >View More</a
+  >
+</div>

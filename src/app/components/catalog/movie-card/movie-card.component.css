@@ -1,0 +1,11 @@
+.square {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.square:hover {
+  transform: translateY(-10px);
+}
+a.link-opacity-100-hover {
+  cursor: pointer;
+}

@@ -1,0 +1,8 @@
+div.navbar {
+  display: flex;
+  background-color: aqua;
+}
+
+div.container-fluid {
+  align-self: flex-end;
+}
