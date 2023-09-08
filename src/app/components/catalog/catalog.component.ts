@@ -18,7 +18,6 @@ export class CatalogComponent implements OnInit {
     this.httpCommincator.getMovies().subscribe(
       (resData) => {
         this.movies = resData;
-        console.log(this.movies);
         this.loading = false;
       },
       (err) => {

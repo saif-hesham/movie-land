@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AuthComponent } from './components/auth/auth.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,13 @@ import { AuthComponent } from './components/auth/auth.component';
     NotFoundComponent,
     AuthComponent,
   ],
-  imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

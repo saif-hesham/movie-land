@@ -2,6 +2,7 @@
 <div
   *ngIf="!loading"
   class="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 mt-3"
+  id="movies-container"
 >
   <app-movie-card *ngFor="let movie of movies" [movie]="movie"></app-movie-card>
 </div>

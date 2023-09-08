@@ -23,7 +23,6 @@ export class MovieDetailsComponent implements OnInit {
     this.httpCommunicator.getMovieDetails(id).subscribe(
       (data) => {
         this.movie = data;
-        console.log(data);
       },
       (err) => {
         this.error =
