@@ -1,0 +1,10 @@
+{
+  "EMAIL": "Enter your email",
+  "PASSWORD": "Enter your password",
+  "LOGIN": "Log In",
+  "LOGOUT": "Log Out",
+  "ERORR1": "Plese Enter a valid email",
+  "ERORR2": "Please enter a password with a minimum length of 6",
+  "INVALID": "Ivalid credentials",
+  "MOVIES": "Movies"
+}

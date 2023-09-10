@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,7 @@ import { AuthService } from '../auth/auth.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-  constructor(private auth: AuthService) {}
+  constructor(private auth: AuthService, translate: TranslateService) {}
   loggedIn: boolean = null;
   loggedInSub = null;
   ngOnInit() {
@@ -17,6 +18,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
   onLogOut() {
     this.auth.logOut();
+    this.loggedIn = false;
   }
 
   ngOnDestroy() {
