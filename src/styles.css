@@ -1,4 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+.mat-mdc-progress-spinner {
+  --mdc-circular-progress-active-indicator-color: rgb(37, 125, 226);
+  margin-top: 30px;
+  position: absolute;
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+  top: 50%;
+
+  left: 50%;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

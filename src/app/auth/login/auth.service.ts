@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import users from './usersDb';
-import user from 'src/app/Models/user.model';
+import users from '../usersDb';
+import user from 'src/app/Types/user.model';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   isLoggedIn = new Subject<boolean>();
-  logInAttempt = new Subject<boolean>();
+  language = new Subject<string>();
   private user: user = null;
 
   constructor(private router: Router) {}
@@ -18,14 +18,18 @@ export class AuthService {
     );
 
     if (!!this.user) {
-      console.log('user found');
       localStorage.setItem('user', JSON.stringify(this.user));
       this.isLoggedIn.next(true);
       this.router.navigate(['/movies']);
-      this.logInAttempt.next(true);
     } else {
-      this.logInAttempt.next(false);
+      this.isLoggedIn.next(false);
     }
+  }
+
+  signUpUser(userObj: user) {
+    localStorage.setItem('user', JSON.stringify(userObj));
+    this.isLoggedIn.next(true);
+    this.router.navigate(['/movies']);
   }
 
   checkUser() {

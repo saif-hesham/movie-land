@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
-import Movie from 'src/app/Models/movie.model';
+import Movie from 'src/app/Types/movie.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class HttpDetailsService {
@@ -10,7 +11,7 @@ export class HttpDetailsService {
   getMovieDetails(id: number) {
     return this.http
       .get<Movie>(
-        `https://api.themoviedb.org/3/movie/${id}?language=en-US&api_key=d60118d51ed5279e39d0624c2f6994f4`
+        `https://api.themoviedb.org/3/movie/${id}?language=en-US&api_key=${environment.apiKey}`
       )
       .pipe(
         map((details) => {

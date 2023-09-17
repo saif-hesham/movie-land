@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand navbar-light bg-dark">
+  <div
+    class="container"
+    [ngClass]="{ 'flex-row-reverse': curLanguage === 'ar' }"
+  >
+    <a [routerLink]="['/movies']" class="navbar-brand text-light ms-1">
+      🎞 Movie Land
+    </a>
+    <ul
+      class="navbar-nav mb-2 mb-lg-0 me-1"
+      [ngClass]="{ 'd-flex flex-row-reverse me-auto': curLanguage === 'ar' }"
+    >
+      <!-- <li class="nav-item">
+        <a
+          class="nav-link active text-light me-3"
+          aria-current="page"
+          [routerLink]="['/movies']"
+          >{{ loggedIn ? ("MOVIES" | translate) : ("LOGIN" | translate) }}</a
+        >
+      </li> -->
+      <li class="nav-item" *ngIf="loggedIn">
+        <a
+          class="text-light btn btn-outline-secondary ms-1"
+          (click)="onChangeCategory('popular')"
+          >Popular</a
+        >
+      </li>
+      <li class="nav-item" *ngIf="loggedIn">
+        <a
+          class="text-light btn btn-outline-secondary ms-1"
+          (click)="onChangeCategory('top_rated')"
+        >
+          TopRated
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="text-light btn btn-outline-secondary ms-1"
+          (click)="onTranslate()"
+          >{{ "LANGUAGE" | translate }}</a
+        >
+      </li>
+      <li class="nav-item" *ngIf="loggedIn">
+        <a class="text-light btn btn-secondary ms-1" (click)="onLogOut()">{{
+          "LOGOUT" | translate
+        }}</a>
+      </li>
+    </ul>
+  </div>
+</nav>

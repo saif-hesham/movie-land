@@ -1,0 +1,11 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { SharedRoutingModule } from './shared-routing.module';
+import { NotFoundComponent } from './not-found/not-found.component';
+
+@NgModule({
+  declarations: [NotFoundComponent],
+  imports: [CommonModule, SharedRoutingModule],
+  exports: [NotFoundComponent],
+})
+export class SharedModule {}

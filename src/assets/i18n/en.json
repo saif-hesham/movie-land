@@ -2,9 +2,11 @@
   "EMAIL": "Enter your email",
   "PASSWORD": "Enter your password",
   "LOGIN": "Log In",
-  "LOGOUT": "Log Out",
+  "LOGOUT": "LogOut",
   "ERORR1": "Plese Enter a valid email",
   "ERORR2": "Please enter a password with a minimum length of 6",
-  "INVALID": "Ivalid credentials",
-  "MOVIES": "Movies"
+  "INVALID": "Invalid credentials",
+  "MOVIES": "Movies",
+  "LANGUAGE": "العربية",
+  "SIGNUP": "Sign Up"
 }

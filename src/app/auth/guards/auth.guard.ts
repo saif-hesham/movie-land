@@ -4,9 +4,9 @@ import {
   Router,
   RouterStateSnapshot,
 } from '@angular/router';
-import { AuthService } from './auth.service';
+import { AuthService } from '../login/auth.service';
 
-export const registerGuard = (
+export const isUserLoggedInGuard = (
   route: ActivatedRouteSnapshot,
   state: RouterStateSnapshot
 ): boolean => {
@@ -15,8 +15,8 @@ export const registerGuard = (
   const isLoggedIn = auth.checkUser();
 
   if (isLoggedIn) {
-    router.navigate(['/movies']);
-  } else {
     return true;
+  } else {
+    router.navigate(['/auth']);
   }
 };

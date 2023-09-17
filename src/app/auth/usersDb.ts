@@ -1,4 +1,4 @@
-import user from 'src/app/Models/user.model';
+import user from 'src/app/Types/user.model';
 
 const users: user[] = [
   { email: 'dute@zicudiz.mk', password: '1347879' },

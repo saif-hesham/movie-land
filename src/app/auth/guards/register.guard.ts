@@ -4,12 +4,12 @@ import {
   Router,
   RouterStateSnapshot,
 } from '@angular/router';
-import { AuthService } from './auth.service';
+import { AuthService } from '../login/auth.service';
 
-export const homeGuard = (
+export const registerGuard = (
   route: ActivatedRouteSnapshot,
   state: RouterStateSnapshot
-): void => {
+): boolean => {
   const auth = inject(AuthService);
   const router = inject(Router);
   const isLoggedIn = auth.checkUser();
@@ -17,6 +17,6 @@ export const homeGuard = (
   if (isLoggedIn) {
     router.navigate(['/movies']);
   } else {
-    router.navigate(['/auth']);
+    return true;
   }
 };

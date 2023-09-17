@@ -1,4 +1,7 @@
-<p *ngIf="loading">Loading...</p>
+<mat-progress-spinner
+  *ngIf="loading"
+  mode="indeterminate"
+></mat-progress-spinner>
 
 <div *ngIf="!error" class="d-flex flex-column align-items-center row p-3">
   <div

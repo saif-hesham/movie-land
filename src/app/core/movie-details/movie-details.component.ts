@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { HttpDetailsService } from './httpDetailsService.service';
-import Movie from 'src/app/Models/movie.model';
+import { HttpDetailsService } from '../../services/httpDetailsService.service';
+import Movie from 'src/app/Types/movie.model';
 
 @Component({
   selector: 'app-movie-details',
@@ -19,6 +19,13 @@ export class MovieDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.getMovieById();
+  }
+  onNavigate() {
+    this.router.navigate(['movies']);
+  }
+
+  getMovieById() {
     const { id } = this.route.snapshot.params;
     this.httpCommunicator.getMovieDetails(id).subscribe(
       (data) => {
@@ -27,11 +34,10 @@ export class MovieDetailsComponent implements OnInit {
       (err) => {
         this.error =
           'There was an error fetching this movie, please try again later.';
+      },
+      () => {
+        this.loading = false;
       }
     );
-    this.loading = false;
-  }
-  onNavigate() {
-    this.router.navigate(['movies']);
   }
 }

@@ -2,10 +2,13 @@
   <div class="row justify-content-center mt-4">
     <div class="col-lg-6 shadow p-3 rounded">
       <form #f="ngForm" (ngSubmit)="onSubmit()">
-        <div class="for-group mb-3">
-          <label class="form-label" for="email">{{
-            "EMAIL" | translate
-          }}</label>
+        <div class="form-group mb-3 d-flex flex-column">
+          <label
+            class="form-label"
+            for="email"
+            [ngClass]="{ 'align-self-end': curLanguage === 'ar' }"
+            >{{ "EMAIL" | translate }}</label
+          >
           <input
             name="email"
             type="email"
@@ -20,14 +23,21 @@
               'is-invalid': !email.valid && email.touched
             }"
           />
-          <div *ngIf="email.invalid && email.touched" class="invalid-feedback">
+          <label
+            *ngIf="email.invalid && email.touched"
+            class="invalid-creds mt-1"
+            [ngClass]="{ 'align-self-end': curLanguage === 'ar' }"
+          >
             {{ "ERORR1" | translate }}
-          </div>
+          </label>
         </div>
-        <div class="for-group mb-4">
-          <label class="form-label" for="password">{{
-            "PASSWORD" | translate
-          }}</label>
+        <div class="for-group mb-4 d-flex flex-column">
+          <label
+            class="form-label"
+            for="password"
+            [ngClass]="{ 'align-self-end': curLanguage === 'ar' }"
+            >{{ "PASSWORD" | translate }}</label
+          >
           <input
             name="password"
             type="password"
@@ -39,30 +49,31 @@
             minlength="6"
             [ngClass]="{ 'is-invalid': password.invalid && password.touched }"
           />
-          <div
+          <label
             *ngIf="password.invalid && password.touched"
-            class="invalid-feedback"
+            [ngClass]="{ 'align-self-end': curLanguage === 'ar' }"
+            class="invalid-creds mt-2"
           >
             {{ "ERORR2" | translate }}
-          </div>
-          <div *ngIf="loginError" class="invalid-creds mt-2">
+          </label>
+          <div
+            *ngIf="loginError"
+            class="invalid-creds mt-2"
+            [ngClass]="{ 'align-self-end': curLanguage === 'ar' }"
+          >
             {{ "INVALID" | translate }}
           </div>
         </div>
-        <div class="d-flex flex-wrap justify-content-between">
+        <div
+          class="d-flex flex-wrap justify-content-between"
+          [ngClass]="{ 'flex-row-reverse': curLanguage === 'ar' }"
+        >
           <button
             type="button"
             class="btn btn-outline-dark col-md-3 col-12 my-2"
-            (click)="onTranslate('ar')"
+            (click)="onSignUp()"
           >
-            العربية
-          </button>
-          <button
-            type="button"
-            class="btn btn-outline-dark col-md-3 col-12 my-2"
-            (click)="onTranslate('en')"
-          >
-            English
+            {{ "SIGNUP" | translate }}
           </button>
           <button
             class="btn btn-dark col-md-5 col-12 my-2"

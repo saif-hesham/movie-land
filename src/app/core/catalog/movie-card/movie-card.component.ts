@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import Movie from 'src/app/Models/movie.model';
+import Movie from 'src/app/Types/movie.model';
 
 @Component({
   selector: 'app-movie-card',
