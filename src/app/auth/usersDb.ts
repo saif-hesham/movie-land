@@ -6,6 +6,5 @@ const users: user[] = [
   { email: 'rimnodi@ef.cr', password: '1488118' },
   { email: 'biageevo@ropev.cz', password: '1311322' },
   { email: 'verakzo@uviwozho.tp', password: '3665093' },
-  { email: 'smohamed@sumerge.com', password: '12345678' },
 ];
 export default users;
